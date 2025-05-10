@@ -75,8 +75,8 @@ services:
       - "9092:9092"  # External access port
     environment:
       KAFKA_BROKER_ID: 1  # Unique identifier for this broker
-      # Connect to all ZooKeeper nodes
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2182,zookeeper-3:2183
+      # Connect to all ZooKeeper nodes with custom znode path
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2182,zookeeper-3:2183/kafka
       # Define listeners for internal and external communication
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-1:29092,PLAINTEXT_HOST://localhost:9092
       # Security protocol mapping for listeners
@@ -97,8 +97,8 @@ services:
       - "9093:9093"  # External access port
     environment:
       KAFKA_BROKER_ID: 2  # Unique identifier for this broker
-      # Connect to all ZooKeeper nodes
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2182,zookeeper-3:2183
+      # Connect to all ZooKeeper nodes with custom znode path
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2182,zookeeper-3:2183/kafka
       # Define listeners for internal and external communication
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-2:29093,PLAINTEXT_HOST://localhost:9093
       # Security protocol mapping for listeners
